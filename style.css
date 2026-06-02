@@ -30,7 +30,7 @@ header::after{
 
 main{
     background: rgb(4, 4, 48);
-    height: 100dvh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
 }
@@ -67,6 +67,21 @@ footer::before{
 }
 
 #gallery{
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        padding: 16px;
+
+
+
+        background: teal;  /* change bg to typecolor */
+    }
 }
