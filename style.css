@@ -67,7 +67,7 @@ footer::before{
 }
 
 #gallery{
-    z-index: 1;
+    z-index: 42;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
