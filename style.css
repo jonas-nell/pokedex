@@ -30,7 +30,9 @@ header::after{
 
 main{
     background: rgb(4, 4, 48);
-    
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
 }
 
 .test{
@@ -62,4 +64,9 @@ footer::before{
     transform: translateY(-100%);
     background: linear-gradient(to top, rgba(75, 2, 75), rgb(4, 4, 48));
 
+}
+
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
 }
