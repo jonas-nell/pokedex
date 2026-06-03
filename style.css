@@ -1,22 +1,22 @@
-header{
+header {
     height: 10dvh;
     background: rgb(75, 2, 75);
     display: flex;
     justify-content: center;
     z-index: 1;
 
-    .content{
+    .content {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        img{
+        img {
             height: 100%;
         }
     }
 }
 
-header::after{
+header::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -25,10 +25,9 @@ header::after{
     height: 120px;
     transform: translateY(100%);
     background: linear-gradient(to bottom, rgba(75, 2, 75), rgb(4, 4, 48));
-
 }
 
-main{
+main {
     background: rgb(4, 4, 48);
     min-height: 100dvh;
     display: flex;
@@ -37,25 +36,25 @@ main{
     padding-bottom: 48px;
 }
 
-.test{
+.test {
     height: 100px;
 }
 
-footer{
+footer {
     position: relative;
     height: 8dvh;
-    background:rgb(75, 2, 75);
+    background: rgb(75, 2, 75);
     display: flex;
     justify-content: center;
 
-    .content{
+    .content {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
 
-footer::before{
+footer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -65,17 +64,16 @@ footer::before{
     z-index: 4;
     transform: translateY(-100%);
     background: linear-gradient(to top, rgba(75, 2, 75), rgb(4, 4, 48));
-
 }
 
-#gallery{
+#gallery {
     z-index: 42;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
 
-    .card{
+    .card {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -83,31 +81,27 @@ footer::before{
         border-radius: 16px;
         padding: 16px;
 
-
-
         /* background: teal;  change bg to typecolor */
 
-        img{
+        img {
             height: 160px;
         }
     }
 
-    h2{
+    h2 {
         text-transform: capitalize;
     }
 
-    .type-badge{
+    .type-badge {
         padding: 4px 12px;
         border-radius: 12px;
         text-transform: capitalize;
         border: 1px solid white;
-        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
-
+        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
     }
-
 }
 
-#loadMore{
+#loadMore {
     z-index: 42;
     border: 1px solid white;
 }
