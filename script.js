@@ -88,6 +88,7 @@ async function loadMorePokemon(){
 }
 
 //currently scans ALL cards, not only newly added ones, maybe change at the end
+// maybe change for loop to map
 function waitForImagesToLoad(){
     const images = document.querySelectorAll(".card img");
     const promises = [];
