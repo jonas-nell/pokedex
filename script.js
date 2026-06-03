@@ -41,7 +41,8 @@ async function init() {
 
 function renderPokemon(pokemonArray) {
     for (const pokemon of pokemonArray) {
-        const newCard = getPokemonCardTemplate(pokemon);
+        const primaryType = pokemon.types[0].type.name;
+        const newCard = getPokemonCardTemplate(pokemon, primaryType);
         gallery.appendChild(newCard);
     }
 }

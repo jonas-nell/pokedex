@@ -1,6 +1,6 @@
-function getPokemonCardTemplate(pokemon){
+function getPokemonCardTemplate(pokemon, primaryType){
     const card = document.createElement("div");
-    const primaryType = pokemon.types[0].type.name;
+
     card.classList.add("card");
     card.classList.add(`type-${primaryType}`);
 
