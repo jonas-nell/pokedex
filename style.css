@@ -30,7 +30,11 @@ header::after{
 
 main{
     background: rgb(4, 4, 48);
-    
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 .test{
@@ -62,4 +66,48 @@ footer::before{
     transform: translateY(-100%);
     background: linear-gradient(to top, rgba(75, 2, 75), rgb(4, 4, 48));
 
+}
+
+#gallery{
+    z-index: 42;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        padding: 16px;
+
+
+
+        /* background: teal;  change bg to typecolor */
+
+        img{
+            height: 160px;
+        }
+    }
+
+    h2{
+        text-transform: capitalize;
+    }
+
+    .type-badge{
+        padding: 4px 12px;
+        border-radius: 12px;
+        text-transform: capitalize;
+        border: 1px solid white;
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+
+    }
+
+}
+
+#loadMore{
+    z-index: 42;
+    border: 1px solid white;
 }

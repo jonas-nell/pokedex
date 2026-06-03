@@ -1,0 +1,72 @@
+.type-fire{
+    background: rgba(240, 128, 48, 1);
+}
+
+.type-water{
+    background: rgba(104, 144, 240, 1);
+}
+
+.type-grass{
+    background: rgba(120, 200, 80, 1);
+}
+
+.type-electric{
+    background: rgba(248, 208, 48, 1);
+}
+
+.type-bug{
+    background: rgba(168, 184, 32, 1);
+}
+
+.type-normal{
+    background: rgba(168, 168, 120, 1);
+}
+
+.type-poison{
+    background: rgba(160, 64, 160, 1);
+}
+
+.type-ground{
+    background: rgba(224, 192, 104, 1);
+}
+
+.type-rock{
+    background: rgba(184, 160, 56, 1);
+}
+
+.type-ghost{
+    background: rgba(112, 88, 152, 1);
+}
+
+.type-psychic{
+    background: rgba(248, 88, 136, 1);
+}
+
+.type-ice{
+    background: rgba(152, 216, 216, 1);
+}
+
+.type-dragon{
+    background: rgba(112, 56, 248, 1);
+}
+
+.type-dark{
+    background: rgba(112, 88, 72, 1);
+}
+
+.type-fairy{
+    background: rgba(238, 153, 172, 1);
+}
+
+.type-fighting{
+    background: rgba(192, 48, 40, 1);
+}
+
+.type-flying{
+    background: rgba(168, 144, 240, 1);
+}
+
+.type-steel{
+    background: rgba(184, 184, 208, 1);
+}
+
