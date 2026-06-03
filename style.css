@@ -102,4 +102,10 @@ footer::before{
         text-transform: capitalize;
         border: 1px solid white;
     }
+
+}
+
+#loadMore{
+    z-index: 42;
+    border: 1px solid white;
 }
