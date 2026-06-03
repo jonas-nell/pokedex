@@ -33,6 +33,8 @@ main{
     min-height: 100dvh;
     display: flex;
     justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 .test{
@@ -70,6 +72,7 @@ footer::before{
     z-index: 42;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
 
     .card{
@@ -83,5 +86,13 @@ footer::before{
 
 
         background: teal;  /* change bg to typecolor */
+
+        img{
+            height: 160px;
+        }
+    }
+
+    h2{
+        text-transform: capitalize;
     }
 }
