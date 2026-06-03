@@ -22,6 +22,8 @@ async function fetchPokemonDetails(pokemonList) {
 }
 
 async function loadPokemon() {
+    loadMore.disabled = true;
+
     try {
         const data = await fetchPokemon();
         const loadedPokemon = await fetchPokemonDetails(data.results);
@@ -32,6 +34,8 @@ async function loadPokemon() {
         offset += loadCount;
     } catch (err) {
         console.error("Failed to load Pokémon", err);
+    } finally{
+        loadMore.disabled = false;
     }
 }
 
