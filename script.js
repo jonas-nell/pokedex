@@ -4,6 +4,8 @@ let offset = 0;
 const loadCount = 25;
 
 const gallery = document.getElementById("gallery");
+const loadingOverlay = document.getElementById("loadingOverlay");
+const loadMore = document.getElementById("loadMore");
 
 async function fetchPokemon() {
     const response = await fetch(
@@ -40,7 +42,10 @@ async function loadPokemon() {
 }
 
 async function init() {
+    showLoadingScreen();
     await loadPokemon();
+    await waitForImagesToLoad();
+    hideLoadingScreen();
 }
 
 function renderPokemon(pokemonArray) {
@@ -62,4 +67,51 @@ function getTypeBadges(types) {
         `;
     }
     return badges;
+}
+
+
+function hideLoadingScreen(){
+    loadingOverlay.classList.add("d-none");
+    enableScroll();
+}
+
+function showLoadingScreen(){
+    loadingOverlay.classList.remove("d-none");
+    disableScroll();
+}
+
+async function loadMorePokemon(){
+    showLoadingScreen();
+    await loadPokemon();
+    await waitForImagesToLoad();
+    hideLoadingScreen();
+}
+
+//currently scans ALL cards, not only newly added ones, maybe change at the end
+function waitForImagesToLoad(){
+    const images = document.querySelectorAll(".card img");
+    const promises = [];
+
+    for (const img of images){
+        if (img.complete){
+            continue;
+        }
+    const imagePromise = new Promise((resolve) =>{
+        img.onload = () => resolve();
+        img.onerror = () => resolve();
+    });
+
+    promises.push(imagePromise);
+    }
+
+    return Promise.all(promises);
+}
+
+function disableScroll(){
+    document.body.classList.add("no-scroll");
+}
+
+function enableScroll(){
+    document.body.classList.remove("no-scroll");
+
 }
