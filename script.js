@@ -44,3 +44,15 @@ function renderPokemon(pokemonArray){
         gallery.appendChild(newCard);
     }
 }
+
+// maybe change this to map instead of for loop
+function getTypeBadges(types){
+    let badges = "";
+
+    for (const typeDetails of types){
+        badges += /*html*/`
+            <span>${typeDetails.type.name}</span>
+        `;
+    }
+    return badges;
+}
