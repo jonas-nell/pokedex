@@ -72,10 +72,12 @@ function getTypeBadges(types) {
 
 function hideLoadingScreen(){
     loadingOverlay.classList.add("d-none");
+    enableScroll();
 }
 
 function showLoadingScreen(){
     loadingOverlay.classList.remove("d-none");
+    disableScroll();
 }
 
 async function loadMorePokemon(){
@@ -103,4 +105,13 @@ function waitForImagesToLoad(){
     }
 
     return Promise.all(promises);
+}
+
+function disableScroll(){
+    document.body.classList.add("no-scroll");
+}
+
+function enableScroll(){
+    document.body.classList.remove("no-scroll");
+
 }

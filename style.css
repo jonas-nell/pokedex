@@ -105,3 +105,7 @@ footer::before {
     z-index: 42;
     border: 1px solid white;
 }
+
+body.no-scroll{
+    overflow: hidden;
+}
