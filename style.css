@@ -85,7 +85,7 @@ footer::before{
 
 
 
-        background: teal;  /* change bg to typecolor */
+        /* background: teal;  change bg to typecolor */
 
         img{
             height: 160px;
@@ -94,5 +94,12 @@ footer::before{
 
     h2{
         text-transform: capitalize;
+    }
+
+    .type-badge{
+        padding: 4px 12px;
+        border-radius: 12px;
+        text-transform: capitalize;
+        border: 1px solid white;
     }
 }
