@@ -12,3 +12,5 @@ searchInput.addEventListener("keydown", (event) => {
         searchPokemon();
     }
 });
+
+loadMore.addEventListener("click", loadMorePokemon);
