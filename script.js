@@ -116,3 +116,25 @@ function enableScroll(){
     document.body.classList.remove("no-scroll");
 
 }
+
+function checkSearchInput(){
+    searchButton.disabled = searchInput.value.trim().length <3;
+}
+
+function searchPokemon(){
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    
+    const filteredPokemon = allPokemon.filter((pokemon) => pokemon.name.includes(searchTerm));
+
+    gallery.innerHTML = "";
+    renderPokemon(filteredPokemon);
+}
+
+function handleSearchInput(){
+    checkSearchInput();
+
+    if (searchInput.value.trim() === ""){
+        gallery.innerHTML = "";
+        renderPokemon(allPokemon);
+    }
+}
