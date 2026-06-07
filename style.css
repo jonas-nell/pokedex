@@ -53,11 +53,15 @@ header::after {
 
 main {
     background: rgb(4, 4, 48);
-    min-height: 100dvh;
+    min-height: 76dvh;
     display: flex;
     justify-content: center;
     padding-top: 48px;
     padding-bottom: 48px;
+}
+
+#noResults{
+    z-index: 1;
 }
 
 .test {
