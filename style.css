@@ -54,7 +54,7 @@ header::after {
 
 main {
     background: rgb(4, 4, 48);
-    min-height: 76dvh;
+    min-height: 72.5dvh;
     display: flex;
     justify-content: center;
     padding-top: 28px;
@@ -150,14 +150,17 @@ footer::before {
     h2 {
         text-transform: capitalize;
         font-size: 18px;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     }
 
     .type-badge {
+        width: 70px;
         padding: 2px 8px;
         border-radius: 12px;
         text-transform: capitalize;
         border: 1px solid white;
         box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     }
 }
 
