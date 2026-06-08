@@ -1,8 +1,9 @@
-function getPokemonCardTemplate(pokemon, primaryType){
+function getPokemonCardTemplate(pokemon, primaryType, index){
     const card = document.createElement("div");
 
     card.classList.add("card");
     card.classList.add(`type-${primaryType}`);
+    card.addEventListener("click", () => openPokemonDialog(index));
 
     card.innerHTML = /*html*/`
             <div class="card-top">
@@ -14,4 +15,13 @@ function getPokemonCardTemplate(pokemon, primaryType){
     `;
 
     return card;
+}
+
+function getPokemonDialogTemplate(pokemon){
+    return /*html*/`
+        <h2>${pokemon.name}</h2>
+        <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+        <button id="previous">left</button>
+        <button id="next">right</button>
+    `;
 }

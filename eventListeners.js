@@ -24,3 +24,9 @@ searchInput.addEventListener("input", () => {
         renderPokemon(allPokemon);
     }
 });
+
+const closeDialog = document.getElementById("closeDialog");
+
+closeDialog.addEventListener("click", () => {
+    pokemonDialog.close();
+});

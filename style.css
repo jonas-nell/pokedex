@@ -183,3 +183,31 @@ body.no-scroll{
     z-index: 200;
     font-size: 20px;
 }
+
+dialog{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 75dvh;
+    width: clamp(135px, 100%, 690px);
+
+    border: none;
+    outline: none;
+    border-radius: 16px;
+
+    font-size: 24px;
+
+    img{
+        height: 100px;
+    }
+}
+
+dialog[open]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}

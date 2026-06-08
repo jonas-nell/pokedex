@@ -3,10 +3,15 @@ const allPokemon = [];
 let offset = 0;
 const loadCount = 25;
 
+let currentIndex = 0;
+let currentPokemonArray = []
+
 const gallery = document.getElementById("gallery");
 const loadingOverlay = document.getElementById("loadingOverlay");
 const loadMore = document.getElementById("loadMore");
 const noResults = document.getElementById("noResults");
+const pokemonDialog = document.getElementById("pokemonDialog");
+const dialogContent = document.getElementById("dialogContent");
 
 async function fetchPokemon() {
     const response = await fetch(
@@ -50,10 +55,14 @@ async function init() {
     hideLoadingScreen();
 }
 
-function renderPokemon(pokemonArray) {
-    for (const pokemon of pokemonArray) {
+function renderPokemon(pokemonArray){
+    currentPokemonArray = pokemonArray;
+    gallery.innerHTML = "";
+
+    for (const [index, pokemon] of pokemonArray.entries()) {
         const primaryType = pokemon.types[0].type.name;
-        const newCard = getPokemonCardTemplate(pokemon, primaryType);
+        const newCard = getPokemonCardTemplate(pokemon, primaryType, index);
+
         gallery.appendChild(newCard);
     }
 }
@@ -152,4 +161,36 @@ function noResultsState(isActive){
         noResults.classList.add("d-none");
         loadMore.classList.remove("d-none");
     }
+}
+
+function openPokemonDialog(index){
+    currentIndex = index;
+    const pokemon = currentPokemonArray[currentIndex];
+
+    const primaryType = pokemon.types[0].type.name;
+
+    pokemonDialog.className = "";
+    pokemonDialog.classList.add(`type-${primaryType}`);
+
+    dialogContent.innerHTML = getPokemonDialogTemplate(pokemon);
+    pokemonDialog.showModal();
+    
+    document.getElementById("next").addEventListener("click", showNextPokemon);
+    document.getElementById("previous").addEventListener("click", showPreviousPokemon);
+}
+
+function showNextPokemon(){
+    currentIndex++;
+    if (currentIndex >= currentPokemonArray.length){
+        currentIndex = 0;
+    }
+    openPokemonDialog(currentIndex);
+}
+
+function showPreviousPokemon(){
+    currentIndex--;
+    if (currentIndex < 0){
+        currentIndex = currentPokemonArray.length -1;
+    }
+    openPokemonDialog(currentIndex);
 }
