@@ -63,6 +63,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         text-align: center;
         gap: 24px;
     }
@@ -144,6 +145,8 @@ footer::before {
     border-radius: 12px;
     border: 1px solid white;
     box-shadow: 2px 2px 5px 0px rgba(255, 255, 255, 0.3);
+    width:fit-content;
+    font-size: 18px;
 }
 
 body.no-scroll{
@@ -152,4 +155,5 @@ body.no-scroll{
 
 #noResults{
     z-index: 200;
+    font-size: 20px;
 }
