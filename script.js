@@ -65,7 +65,7 @@ function getTypeBadges(types) {
     for (const typeDetails of types) {
         const type = typeDetails.type.name;
         badges += /*html*/ `
-            <span class = "type-badge type-${type}">${type}</span>
+                <span class = "type-badge type-${type}">${type}</span>
         `;
     }
     return badges;

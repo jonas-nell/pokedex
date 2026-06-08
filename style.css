@@ -114,17 +114,36 @@ footer::before {
     .card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         border-radius: 16px;
         padding: 12px;
+        gap: 24px;
 
         width: 135px;
-        height: ;
 
 
         img {
-            height: 90px;
+            height: 100px;
+        }
+        
+        .card-top{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            p{
+                position: absolute;
+                align-self: center;
+                top: 28px;
+                right: 0;
+            }
+        }
+
+        .card-bottom{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            bottom: 8px;
         }
     }
 
@@ -134,7 +153,7 @@ footer::before {
     }
 
     .type-badge {
-        padding: 4px 12px;
+        padding: 2px 8px;
         border-radius: 12px;
         text-transform: capitalize;
         border: 1px solid white;
