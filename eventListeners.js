@@ -5,7 +5,6 @@ searchInput.addEventListener("input", checkSearchInput);
 
 searchButton.addEventListener("click", searchPokemon);
 
-searchInput.addEventListener("input", handleSearchInput);
 
 searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && searchInput.value.trim().length >= 3){
@@ -14,3 +13,14 @@ searchInput.addEventListener("keydown", (event) => {
 });
 
 loadMore.addEventListener("click", loadMorePokemon);
+
+searchInput.addEventListener("input", () => {
+    checkSearchInput();
+    const searchTerm = searchInput.value.trim();
+
+    if (searchTerm === "") {
+        noResultsState(false);
+        gallery.innerHTML = "";
+        renderPokemon(allPokemon);
+    }
+});
