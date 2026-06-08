@@ -1,5 +1,5 @@
 header {
-    height: 105px;
+    height: 130px;
     background: rgb(75, 2, 75);
     display: flex;
     justify-content: center;
@@ -9,8 +9,9 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         z-index: 1;
-        gap: 24px;
+        gap: 16px;
 
         img {
             height: 65px;
@@ -56,8 +57,17 @@ main {
     min-height: 76dvh;
     display: flex;
     justify-content: center;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
 }
 
 #noResults{
@@ -104,24 +114,46 @@ footer::before {
     .card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         border-radius: 16px;
-        padding: 16px;
+        padding: 12px;
+        gap: 24px;
 
-        /* background: teal;  change bg to typecolor */
+        width: 135px;
+
 
         img {
-            height: 160px;
+            height: 100px;
+        }
+        
+        .card-top{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            p{
+                position: absolute;
+                align-self: center;
+                top: 28px;
+                right: 0;
+            }
+        }
+
+        .card-bottom{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            bottom: 8px;
         }
     }
 
     h2 {
         text-transform: capitalize;
+        font-size: 18px;
     }
 
     .type-badge {
-        padding: 4px 12px;
+        padding: 2px 8px;
         border-radius: 12px;
         text-transform: capitalize;
         border: 1px solid white;
@@ -132,8 +164,19 @@ footer::before {
 #loadMore {
     z-index: 42;
     border: 1px solid white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 1px solid white;
+    box-shadow: 2px 2px 5px 0px rgba(255, 255, 255, 0.3);
+    width:fit-content;
+    font-size: 18px;
 }
 
 body.no-scroll{
     overflow: hidden;
+}
+
+#noResults{
+    z-index: 200;
+    font-size: 20px;
 }

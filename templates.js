@@ -5,10 +5,12 @@ function getPokemonCardTemplate(pokemon, primaryType){
     card.classList.add(`type-${primaryType}`);
 
     card.innerHTML = /*html*/`
-            <h2>${pokemon.name}</h2>
+            <div class="card-top">
+                <h2>${pokemon.name}</h2>
+                <p>#${pokemon.id}</p>
+            </div>
             <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
-            <p>#${pokemon.id}</p>
-            ${getTypeBadges(pokemon.types)}    
+            <div class= "card-bottom">${getTypeBadges(pokemon.types)}</div>
     `;
 
     return card;

@@ -44,6 +44,7 @@ async function loadPokemon() {
 
 async function init() {
     showLoadingScreen();
+    checkSearchInput();
     await loadPokemon();
     await waitForImagesToLoad();
     hideLoadingScreen();
@@ -64,7 +65,7 @@ function getTypeBadges(types) {
     for (const typeDetails of types) {
         const type = typeDetails.type.name;
         badges += /*html*/ `
-            <span class = "type-badge type-${type}">${type}</span>
+                <span class = "type-badge type-${type}">${type}</span>
         `;
     }
     return badges;
@@ -125,9 +126,9 @@ function checkSearchInput(){
 function searchPokemon(){
     const searchTerm = searchInput.value.toLowerCase().trim();
     gallery.innerHTML = "";
+    noResultsState(false);
 
     if (searchTerm === ""){
-        noResults.classList.add("d-none");
         renderPokemon(allPokemon);
         return;
     }
@@ -135,18 +136,20 @@ function searchPokemon(){
     const filteredPokemon = allPokemon.filter((pokemon) => pokemon.name.toLowerCase().includes(searchTerm));
 
     if (filteredPokemon.length === 0){
-        noResults.classList.remove("d-none");
+        noResultsState(true);
         return;
     }
-    noResults.classList.add("d-none");
+
     renderPokemon(filteredPokemon);
 }
 
-function handleSearchInput(){
-    checkSearchInput();
 
-    if (searchInput.value.trim() === ""){
-        gallery.innerHTML = "";
-        renderPokemon(allPokemon);
+function noResultsState(isActive){
+    if(isActive){
+        noResults.classList.remove("d-none");
+        loadMore.classList.add("d-none");
+    } else{
+        noResults.classList.add("d-none");
+        loadMore.classList.remove("d-none");
     }
 }
