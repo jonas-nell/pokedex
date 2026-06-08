@@ -44,6 +44,7 @@ async function loadPokemon() {
 
 async function init() {
     showLoadingScreen();
+    checkSearchInput();
     await loadPokemon();
     await waitForImagesToLoad();
     hideLoadingScreen();
@@ -146,6 +147,7 @@ function handleSearchInput(){
     checkSearchInput();
 
     if (searchInput.value.trim() === ""){
+        noResults.classList.add("d-none");
         gallery.innerHTML = "";
         renderPokemon(allPokemon);
     }

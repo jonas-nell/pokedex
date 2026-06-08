@@ -58,6 +58,14 @@ main {
     justify-content: center;
     padding-top: 48px;
     padding-bottom: 48px;
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 24px;
+    }
 }
 
 #noResults{
@@ -132,8 +140,16 @@ footer::before {
 #loadMore {
     z-index: 42;
     border: 1px solid white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 1px solid white;
+    box-shadow: 2px 2px 5px 0px rgba(255, 255, 255, 0.3);
 }
 
 body.no-scroll{
     overflow: hidden;
+}
+
+#noResults{
+    z-index: 200;
 }
