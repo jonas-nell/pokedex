@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="loadingScreen.css">
     <script src="./templates.js"></script>
     <script src="./script.js" defer></script>
+    <script src="./eventListeners.js" defer></script>
 </head>
 <body onload="init()">
     <div id="loadingOverlay">
@@ -17,15 +18,18 @@
     </div>    
     <header>
         <div class="content">
-            <div></div>
             <img src="./assets/icons/pokemon-logo.png" alt="pokémon-logo">
-            <p class = "searchbar">searchbar</p>
+            <div class="searchbar">
+                <input type="text" id="searchInput" placeholder="Search Pokémon">
+                <button id="searchButton">Search</button>
+            </div>
         </div>
     </header>
     <main>
         <div class="content">
             <div id="gallery"></div>
-            <button id="loadMore" onclick="loadMorePokemon()">Load more Pokémon</button>
+            <button id="loadMore">Load more Pokémon</button>
+            <p id="noResults" class="d-none">No Pokémon found.</p>
         </div>
     </main>
     <footer>

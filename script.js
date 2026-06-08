@@ -6,6 +6,7 @@ const loadCount = 25;
 const gallery = document.getElementById("gallery");
 const loadingOverlay = document.getElementById("loadingOverlay");
 const loadMore = document.getElementById("loadMore");
+const noResults = document.getElementById("noResults");
 
 async function fetchPokemon() {
     const response = await fetch(
@@ -115,4 +116,37 @@ function disableScroll(){
 function enableScroll(){
     document.body.classList.remove("no-scroll");
 
+}
+
+function checkSearchInput(){
+    searchButton.disabled = searchInput.value.trim().length <3;
+}
+
+function searchPokemon(){
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    gallery.innerHTML = "";
+
+    if (searchTerm === ""){
+        noResults.classList.add("d-none");
+        renderPokemon(allPokemon);
+        return;
+    }
+    
+    const filteredPokemon = allPokemon.filter((pokemon) => pokemon.name.toLowerCase().includes(searchTerm));
+
+    if (filteredPokemon.length === 0){
+        noResults.classList.remove("d-none");
+        return;
+    }
+    noResults.classList.add("d-none");
+    renderPokemon(filteredPokemon);
+}
+
+function handleSearchInput(){
+    checkSearchInput();
+
+    if (searchInput.value.trim() === ""){
+        gallery.innerHTML = "";
+        renderPokemon(allPokemon);
+    }
 }
