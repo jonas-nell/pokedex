@@ -35,5 +35,6 @@ closeDialog.addEventListener("click", () => {
 pokemonDialog.addEventListener("click", (event) => {
     if (event.target === pokemonDialog) {
         pokemonDialog.close();
+        enableScroll();
     }
 });
