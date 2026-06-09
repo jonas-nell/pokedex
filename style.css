@@ -17,12 +17,12 @@ header {
             height: 65px;
         }
 
-        .searchbar{
+        .searchbar {
             display: flex;
             gap: 12px;
         }
 
-        #searchInput{
+        #searchInput {
             border: 1px white solid;
             border-radius: 12px;
             padding: 2px 8px;
@@ -30,7 +30,7 @@ header {
             outline: none;
         }
 
-        #searchButton{
+        #searchButton {
             border: 1px white solid;
             border-radius: 12px;
             padding: 2px 8px;
@@ -50,8 +50,6 @@ header::after {
     background: linear-gradient(to bottom, rgba(75, 2, 75), rgb(4, 4, 48));
 }
 
-
-
 main {
     background: rgb(4, 4, 48);
     min-height: 72.5dvh;
@@ -60,7 +58,7 @@ main {
     padding-top: 28px;
     padding-bottom: 28px;
 
-    .content{
+    .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -70,7 +68,7 @@ main {
     }
 }
 
-#noResults{
+#noResults {
     z-index: 1;
 }
 
@@ -121,17 +119,16 @@ footer::before {
 
         width: 135px;
 
-
         img {
             height: 100px;
         }
-        
-        .card-top{
+
+        .card-top {
             display: flex;
             justify-content: center;
             width: 100%;
 
-            p{
+            p {
                 position: absolute;
                 align-self: center;
                 top: 28px;
@@ -139,7 +136,7 @@ footer::before {
             }
         }
 
-        .card-bottom{
+        .card-bottom {
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -171,20 +168,20 @@ footer::before {
     border-radius: 12px;
     border: 1px solid white;
     box-shadow: 2px 2px 5px 0px rgba(255, 255, 255, 0.3);
-    width:fit-content;
+    width: fit-content;
     font-size: 18px;
 }
 
-body.no-scroll{
+body.no-scroll {
     overflow: hidden;
 }
 
-#noResults{
+#noResults {
     z-index: 200;
     font-size: 20px;
 }
 
-dialog{
+dialog {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -199,15 +196,52 @@ dialog{
 
     font-size: 24px;
 
-    img{
-        height: 100px;
+    img {
+        height: 200px;
     }
 }
 
-dialog[open]{
+dialog[open] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     border: none;
+
+    #dialogContent {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+        padding: 16px 16px;
+        text-transform: capitalize;
+
+        p {
+            position: absolute;
+            top: 55px;
+            right: 8px;
+        }
+
+        .bottom-dialog {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+#previous img {
+    height: 50px;
+    transform: rotate(180deg);
+}
+
+#next img {
+    height: 50px;
+}
+
+#closeDialog {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 9999;
 }

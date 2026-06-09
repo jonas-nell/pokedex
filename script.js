@@ -37,7 +37,7 @@ async function loadPokemon() {
         const loadedPokemon = await fetchPokemonDetails(data.results);
 
         allPokemon.push(...loadedPokemon);
-        renderPokemon(loadedPokemon);
+        renderPokemon(allPokemon);
 
         offset += loadCount;
     } catch (err) {
@@ -174,7 +174,7 @@ function openPokemonDialog(index){
 
     dialogContent.innerHTML = getPokemonDialogTemplate(pokemon);
     pokemonDialog.showModal();
-    
+
     document.getElementById("next").addEventListener("click", showNextPokemon);
     document.getElementById("previous").addEventListener("click", showPreviousPokemon);
 }

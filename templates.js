@@ -20,8 +20,14 @@ function getPokemonCardTemplate(pokemon, primaryType, index){
 function getPokemonDialogTemplate(pokemon){
     return /*html*/`
         <h2>${pokemon.name}</h2>
+        <p>#${pokemon.id}</p>
         <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
-        <button id="previous">left</button>
-        <button id="next">right</button>
+        <div class="stats">
+
+        </div>
+        <div class="bottom-dialog">
+            <button id="previous"><img src="./assets/icons/arrow-right.png" alt=""></button>
+            <button id="next"><img src="./assets/icons/arrow-right.png" alt=""></button>
+        </div>
     `;
 }
