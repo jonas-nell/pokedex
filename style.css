@@ -150,15 +150,15 @@ footer::before {
         text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     }
 
-    .type-badge {
-        min-width: 70px;
-        padding: 2px 8px;
-        border-radius: 12px;
-        text-transform: capitalize;
-        border: 1px solid white;
-        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
-        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-    }
+}
+.type-badge {
+    min-width: 70px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: capitalize;
+    border: 1px solid white;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #loadMore {
@@ -187,7 +187,7 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    height: 75dvh;
+    height: 85dvh;
     width: clamp(135px, 100%, 690px);
 
     border: none;
@@ -197,7 +197,8 @@ dialog {
     font-size: 24px;
 
     img {
-        height: 200px;
+        width: 100%;
+
     }
 }
 
@@ -212,31 +213,32 @@ dialog[open] {
         flex-direction: column;
         height: 100%;
         width: 100%;
-        justify-content: space-between;
         padding: 16px 16px;
         text-transform: capitalize;
 
         p {
             position: absolute;
-            top: 55px;
-            right: 8px;
+            top: 60px;
+            right: 16px;
         }
 
         .bottom-dialog {
             display: flex;
             width: 100%;
             justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
         }
     }
 }
 
 #previous img {
-    height: 50px;
+    height: 36px;
     transform: rotate(180deg);
 }
 
 #next img {
-    height: 50px;
+    height: 36px;
 }
 
 #closeDialog {
@@ -244,4 +246,29 @@ dialog[open] {
     top: 18px;
     right: 18px;
     z-index: 9999;
+}
+
+.active-tab{
+    border-bottom: 2px solid white;
+}
+
+.dialog-tabs{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+
+}
+
+#dialogContentPage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    font-size: 16px;
+    gap: 8px;
+    justify-content: center;
+}
+
+.dialog-types{
+    align-self: center;
 }

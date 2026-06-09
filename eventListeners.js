@@ -30,3 +30,4 @@ const closeDialog = document.getElementById("closeDialog");
 closeDialog.addEventListener("click", () => {
     pokemonDialog.close();
 });
+

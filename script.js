@@ -177,6 +177,19 @@ function openPokemonDialog(index){
 
     document.getElementById("next").addEventListener("click", showNextPokemon);
     document.getElementById("previous").addEventListener("click", showPreviousPokemon);
+
+    renderDialogPage(getAboutTemplate(pokemon));
+    setActiveTab(document.getElementById("aboutTab"));
+
+    document.getElementById("aboutTab").addEventListener("click", () => {
+        renderDialogPage(getAboutTemplate(pokemon));
+        setActiveTab(document.getElementById("aboutTab"));
+    });
+
+    document.getElementById("statsTab").addEventListener("click", () => {
+        renderDialogPage(getStatsTemplate(pokemon));
+        setActiveTab(document.getElementById("statsTab"));
+    });
 }
 
 function showNextPokemon(){
@@ -193,4 +206,15 @@ function showPreviousPokemon(){
         currentIndex = currentPokemonArray.length -1;
     }
     openPokemonDialog(currentIndex);
+}
+
+function renderDialogPage(content){
+    document.getElementById("dialogContentPage").innerHTML = content;
+}
+
+function setActiveTab(activeButton){
+    document.getElementById("aboutTab").classList.remove("active-tab");
+    document.getElementById("statsTab").classList.remove("active-tab");
+
+    activeButton.classList.add("active-tab");
 }
