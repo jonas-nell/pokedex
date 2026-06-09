@@ -174,6 +174,7 @@ function openPokemonDialog(index){
 
     dialogContent.innerHTML = getPokemonDialogTemplate(pokemon);
     pokemonDialog.showModal();
+    disableScroll()
 
     document.getElementById("next").addEventListener("click", showNextPokemon);
     document.getElementById("previous").addEventListener("click", showPreviousPokemon);
