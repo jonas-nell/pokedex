@@ -24,3 +24,16 @@ searchInput.addEventListener("input", () => {
         renderPokemon(allPokemon);
     }
 });
+
+const closeDialog = document.getElementById("closeDialog");
+
+closeDialog.addEventListener("click", () => {
+    pokemonDialog.close();
+    enableScroll();
+});
+
+pokemonDialog.addEventListener("click", (event) => {
+    if (event.target === pokemonDialog) {
+        pokemonDialog.close();
+    }
+});

@@ -17,12 +17,12 @@ header {
             height: 65px;
         }
 
-        .searchbar{
+        .searchbar {
             display: flex;
             gap: 12px;
         }
 
-        #searchInput{
+        #searchInput {
             border: 1px white solid;
             border-radius: 12px;
             padding: 2px 8px;
@@ -30,7 +30,7 @@ header {
             outline: none;
         }
 
-        #searchButton{
+        #searchButton {
             border: 1px white solid;
             border-radius: 12px;
             padding: 2px 8px;
@@ -50,8 +50,6 @@ header::after {
     background: linear-gradient(to bottom, rgba(75, 2, 75), rgb(4, 4, 48));
 }
 
-
-
 main {
     background: rgb(4, 4, 48);
     min-height: 72.5dvh;
@@ -60,7 +58,7 @@ main {
     padding-top: 28px;
     padding-bottom: 28px;
 
-    .content{
+    .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -70,7 +68,7 @@ main {
     }
 }
 
-#noResults{
+#noResults {
     z-index: 1;
 }
 
@@ -118,20 +116,20 @@ footer::before {
         border-radius: 16px;
         padding: 12px;
         gap: 24px;
+        border: 1px solid white;
 
         width: 135px;
-
 
         img {
             height: 100px;
         }
-        
-        .card-top{
+
+        .card-top {
             display: flex;
             justify-content: center;
             width: 100%;
 
-            p{
+            p {
                 position: absolute;
                 align-self: center;
                 top: 28px;
@@ -139,7 +137,7 @@ footer::before {
             }
         }
 
-        .card-bottom{
+        .card-bottom {
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -153,15 +151,15 @@ footer::before {
         text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     }
 
-    .type-badge {
-        min-width: 70px;
-        padding: 2px 8px;
-        border-radius: 12px;
-        text-transform: capitalize;
-        border: 1px solid white;
-        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
-        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-    }
+}
+.type-badge {
+    min-width: 70px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: capitalize;
+    border: 1px solid white;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #loadMore {
@@ -171,15 +169,113 @@ footer::before {
     border-radius: 12px;
     border: 1px solid white;
     box-shadow: 2px 2px 5px 0px rgba(255, 255, 255, 0.3);
-    width:fit-content;
+    width: fit-content;
     font-size: 18px;
 }
 
-body.no-scroll{
+body.no-scroll {
     overflow: hidden;
 }
 
-#noResults{
+#noResults {
     z-index: 200;
     font-size: 20px;
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 85dvh;
+    width: clamp(135px, 100%, 690px);
+
+    border: none;
+    outline: none;
+    border-radius: 16px;
+
+    font-size: 24px;
+
+    img {
+        width: 100%;
+
+    }
+}
+
+dialog[open] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;    
+    box-shadow: 5px 5px 100px 50px rgba(255, 255, 255, 1);
+
+    #dialogContent {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 16px 16px;
+        text-transform: capitalize;
+
+        p {
+            position: absolute;
+            top: 60px;
+            right: 16px;
+        }
+
+        .bottom-dialog {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+    }
+}
+
+#previous img {
+    height: 36px;
+    transform: rotate(180deg);
+}
+
+#next img {
+    height: 36px;
+}
+
+#closeDialog {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 9999;
+}
+
+.active-tab{
+    border-bottom: 2px solid white;
+}
+
+.dialog-tabs{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+
+}
+
+#dialogContentPage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    font-size: 16px;
+    gap: 8px;
+    justify-content: center;
+}
+
+.dialog-types{
+    align-self: center;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 100px 50px rgba(255, 255, 255, 1);
+    z-index: 54;
 }
