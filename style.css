@@ -52,9 +52,10 @@ header::after {
 
 main {
     background: rgb(4, 4, 48);
-    min-height: 72.5dvh;
+    min-height: calc(92dvh - 180px);
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 28px;
     padding-bottom: 28px;
 
@@ -118,7 +119,7 @@ footer::before {
         gap: 24px;
         border: 1px solid white;
 
-        width: 135px;
+        width: clamp(135px, 35vw, 160px);
 
         img {
             height: 100px;
@@ -188,19 +189,14 @@ dialog {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    height: 85dvh;
-    width: clamp(135px, 100%, 690px);
+    height: clamp(550px, 90dvh, 650px);
+    width: clamp(135px, 100%, 400px);
 
     border: none;
     outline: none;
     border-radius: 16px;
 
     font-size: 24px;
-
-    img {
-        width: 100%;
-
-    }
 }
 
 dialog[open] {
@@ -217,6 +213,12 @@ dialog[open] {
         width: 100%;
         padding: 16px 16px;
         text-transform: capitalize;
+
+        .dialog-image{
+            height: clamp(230px, 15dvh, 400px);
+            width: auto;
+            object-fit: contain;
+        }
 
         p {
             position: absolute;
@@ -258,6 +260,7 @@ dialog[open] {
     display: flex;
     justify-content: space-around;
     font-size: 20px;
+    margin-top: 8px;
 
 }
 
@@ -272,7 +275,14 @@ dialog[open] {
 }
 
 .dialog-types{
-    align-self: center;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 12px;
 }
 
 .card:hover{
