@@ -3,8 +3,8 @@ const allPokemon = [];
 let offset = 0;
 const loadCount = 25;
 
-let currentIndex = 0;
 let currentPokemonArray = []
+let currentPokemon
 
 const gallery = document.getElementById("gallery");
 const loadingOverlay = document.getElementById("loadingOverlay");
@@ -57,9 +57,9 @@ async function init() {
 }
 
 function renderPokemon(pokemonArray){
-    for (const [index, pokemon] of pokemonArray.entries()) {
+    for (const pokemon of pokemonArray) {
         const primaryType = pokemon.types[0].type.name;
-        const newCard = getPokemonCardTemplate(pokemon, primaryType, index);
+        const newCard = getPokemonCardTemplate(pokemon, primaryType);
 
         gallery.appendChild(newCard);
     }
@@ -162,10 +162,8 @@ function noResultsState(isActive){
     }
 }
 
-function openPokemonDialog(index){
-    currentIndex = index;
-    const pokemon = currentPokemonArray[currentIndex];
-
+function openPokemonDialog(pokemon){
+    currentPokemon = pokemon;
     const primaryType = pokemon.types[0].type.name;
 
     pokemonDialog.className = "";
@@ -184,19 +182,23 @@ function openPokemonDialog(index){
 }
 
 function showNextPokemon(){
-    currentIndex++;
-    if (currentIndex >= currentPokemonArray.length){
-        currentIndex = 0;
+    let index = getCurrentIndex() +1;
+
+    if (index >= allPokemon.length){
+        index = 0;
     }
-    openPokemonDialog(currentIndex);
+
+    openPokemonDialog(allPokemon[index]);
 }
 
 function showPreviousPokemon(){
-    currentIndex--;
-    if (currentIndex < 0){
-        currentIndex = currentPokemonArray.length -1;
+    let index = getCurrentIndex() -1;
+
+    if (index < 0){
+        index = allPokemon.length -1;
     }
-    openPokemonDialog(currentIndex);
+
+    openPokemonDialog(allPokemon[index]);
 }
 
 function renderDialogPage(content){
@@ -208,4 +210,8 @@ function setActiveTab(activeButton){
     document.getElementById("statsTab").classList.remove("active-tab");
 
     activeButton.classList.add("active-tab");
+}
+
+function getCurrentIndex(){
+    return allPokemon.findIndex(p => p.id === currentPokemon.id);
 }

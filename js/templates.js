@@ -4,7 +4,6 @@ function getPokemonCardTemplate(pokemon, primaryType, index) {
     card.classList.add("card");
     card.classList.add(`type-${primaryType}`);
     card.dataset.id = "card";
-    card.addEventListener("click", () => openPokemonDialog(index));
 
     card.innerHTML = /*html*/ `
             <div class="card-top">
@@ -13,7 +12,8 @@ function getPokemonCardTemplate(pokemon, primaryType, index) {
             </div>
             <img data-id = "card-image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
             <div class= "card-bottom">${getTypeBadges(pokemon.types)}</div>
-    `;
+            `;
+    card.addEventListener("click", () => openPokemonDialog(pokemon));
 
     return card;
 }
@@ -41,7 +41,7 @@ function getAboutTemplate(pokemon) {
     return /*html*/ `
         <span>Height: ${(pokemon.height / 10).toFixed(1).replace(".", ",")} m</span>
         <span>Weight: ${(pokemon.weight / 10).toFixed(1).replace(".", ",")} kg</span>
-        <span>Abilities: ${pokemon.abilities.map(a => a.ability.name).join(", ")}</span>
+        <span>Abilities: ${pokemon.abilities.map((a) => a.ability.name).join(", ")}</span>
         <span class="dialog-types">${getTypeBadges(pokemon.types)}</span>
     `;
 }
