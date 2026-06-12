@@ -37,7 +37,7 @@ async function loadPokemon() {
         const loadedPokemon = await fetchPokemonDetails(data.results);
 
         allPokemon.push(...loadedPokemon);
-        renderPokemon(allPokemon);
+        renderPokemon(loadedPokemon);
 
         offset += loadCount;
     } catch (err) {
@@ -57,9 +57,6 @@ async function init() {
 }
 
 function renderPokemon(pokemonArray){
-    currentPokemonArray = pokemonArray;
-    gallery.innerHTML = "";
-
     for (const [index, pokemon] of pokemonArray.entries()) {
         const primaryType = pokemon.types[0].type.name;
         const newCard = getPokemonCardTemplate(pokemon, primaryType, index);
