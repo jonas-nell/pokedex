@@ -21,7 +21,7 @@ function getPokemonDialogTemplate(pokemon) {
     return /*html*/ `
         <h2>${pokemon.name}</h2>
         <p>#${pokemon.id}</p>
-        <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+        <img class = dialog-image src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
         <div class="dialog-tabs">
             <button id="aboutTab">About</button>
             <button id="statsTab">Stats</button>
