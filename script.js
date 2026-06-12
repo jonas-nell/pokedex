@@ -176,23 +176,14 @@ function openPokemonDialog(index){
 
     dialogContent.innerHTML = getPokemonDialogTemplate(pokemon);
     pokemonDialog.showModal();
-    disableScroll()
+    disableScroll();
 
-    document.getElementById("next").addEventListener("click", showNextPokemon);
-    document.getElementById("previous").addEventListener("click", showPreviousPokemon);
+    getNavigationListeners();
 
     renderDialogPage(getAboutTemplate(pokemon));
     setActiveTab(document.getElementById("aboutTab"));
 
-    document.getElementById("aboutTab").addEventListener("click", () => {
-        renderDialogPage(getAboutTemplate(pokemon));
-        setActiveTab(document.getElementById("aboutTab"));
-    });
-
-    document.getElementById("statsTab").addEventListener("click", () => {
-        renderDialogPage(getStatsTemplate(pokemon));
-        setActiveTab(document.getElementById("statsTab"));
-    });
+    getDialogContentListeners(pokemon);
 }
 
 function showNextPokemon(){

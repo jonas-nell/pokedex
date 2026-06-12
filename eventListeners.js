@@ -38,3 +38,20 @@ pokemonDialog.addEventListener("click", (event) => {
         enableScroll();
     }
 });
+
+function getNavigationListeners(){
+    document.getElementById("next").addEventListener("click", showNextPokemon);
+    document.getElementById("previous").addEventListener("click", showPreviousPokemon);
+}
+
+function getDialogContentListeners(pokemon){
+        document.getElementById("aboutTab").addEventListener("click", () => {
+        renderDialogPage(getAboutTemplate(pokemon));
+        setActiveTab(document.getElementById("aboutTab"));
+    });
+
+    document.getElementById("statsTab").addEventListener("click", () => {
+        renderDialogPage(getStatsTemplate(pokemon));
+        setActiveTab(document.getElementById("statsTab"));
+    });
+}
