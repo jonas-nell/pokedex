@@ -143,6 +143,8 @@ function searchPokemon(){
     
     const filteredPokemon = allPokemon.filter((pokemon) => pokemon.name.toLowerCase().includes(searchTerm));
 
+    loadMore.classList.add("d-none");
+
     if (filteredPokemon.length === 0){
         noResultsState(true);
         return;

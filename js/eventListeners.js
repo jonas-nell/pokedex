@@ -21,6 +21,7 @@ searchInput.addEventListener("input", () => {
     if (searchTerm === "") {
         noResultsState(false);
         gallery.innerHTML = "";
+        loadMore.classList.remove("d-none");
         renderPokemon(allPokemon);
     }
 });
