@@ -4,7 +4,8 @@ let offset = 0;
 const loadCount = 25;
 
 let currentPokemonArray = []
-let currentPokemon
+let currentPokemon = null
+let currentDisplayedPokemon = [];
 
 const gallery = document.getElementById("gallery");
 const loadingOverlay = document.getElementById("loadingOverlay");
@@ -57,6 +58,7 @@ async function init() {
 }
 
 function renderPokemon(pokemonArray){
+    currentDisplayedPokemon = pokemonArray;
     for (const pokemon of pokemonArray) {
         const primaryType = pokemon.types[0].type.name;
         const newCard = getPokemonCardTemplate(pokemon, primaryType);
@@ -190,7 +192,7 @@ function showNextPokemon(){
         index = 0;
     }
 
-    openPokemonDialog(allPokemon[index]);
+    openPokemonDialog(currentDisplayedPokemon[index]);
 }
 
 function showPreviousPokemon(){
@@ -200,7 +202,7 @@ function showPreviousPokemon(){
         index = allPokemon.length -1;
     }
 
-    openPokemonDialog(allPokemon[index]);
+    openPokemonDialog(currentDisplayedPokemon[index]);
 }
 
 function renderDialogPage(content){
@@ -215,5 +217,5 @@ function setActiveTab(activeButton){
 }
 
 function getCurrentIndex(){
-    return allPokemon.findIndex(p => p.id === currentPokemon.id);
+    return currentDisplayedPokemon.findIndex(p => p.id === currentPokemon.id);
 }
