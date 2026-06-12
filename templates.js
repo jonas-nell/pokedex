@@ -39,8 +39,8 @@ function getPokemonDialogTemplate(pokemon) {
 
 function getAboutTemplate(pokemon) {
     return /*html*/ `
-        <span>Height: ${pokemon.height}</span>
-        <span>Weight: ${pokemon.weight}</span>
+        <span>Height: ${(pokemon.height / 10).toFixed(1).replace(".", ",")} m</span>
+        <span>Weight: ${(pokemon.weight / 10).toFixed(1).replace(".", ",")} kg</span>
         <span>Abilities: ${pokemon.abilities.map(a => a.ability.name).join(", ")}</span>
         <span class="dialog-types">${getTypeBadges(pokemon.types)}</span>
     `;
