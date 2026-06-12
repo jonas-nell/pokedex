@@ -50,8 +50,9 @@ async function loadPokemon() {
 async function init() {
     showLoadingScreen();
     checkSearchInput();
+    const minimumLoadingTime = new Promise (resolve => setTimeout(resolve, 2500))
     await loadPokemon();
-    await waitForImagesToLoad();
+    await Promise.all([waitForImagesToLoad(), minimumLoadingTime]);
     hideLoadingScreen();
 }
 
@@ -93,8 +94,9 @@ function showLoadingScreen(){
 
 async function loadMorePokemon(){
     showLoadingScreen();
+    const minimumLoadingTime = new Promise(resolve => setTimeout(resolve, 2500));
     await loadPokemon();
-    await waitForImagesToLoad();
+    await Promise.all([waitForImagesToLoad(),minimumLoadingTime]);
     hideLoadingScreen();
 }
 
