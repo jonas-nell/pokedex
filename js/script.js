@@ -188,7 +188,7 @@ function openPokemonDialog(pokemon){
 function showNextPokemon(){
     let index = getCurrentIndex() +1;
 
-    if (index >= allPokemon.length){
+    if (index >= currentDisplayedPokemon.length){
         index = 0;
     }
 
@@ -199,7 +199,7 @@ function showPreviousPokemon(){
     let index = getCurrentIndex() -1;
 
     if (index < 0){
-        index = allPokemon.length -1;
+        index = currentDisplayedPokemon.length -1;
     }
 
     openPokemonDialog(currentDisplayedPokemon[index]);
