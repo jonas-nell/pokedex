@@ -3,6 +3,7 @@ function getPokemonCardTemplate(pokemon, primaryType, index) {
 
     card.classList.add("card");
     card.classList.add(`type-${primaryType}`);
+    card.dataset.id = "card";
     card.addEventListener("click", () => openPokemonDialog(index));
 
     card.innerHTML = /*html*/ `
@@ -10,7 +11,7 @@ function getPokemonCardTemplate(pokemon, primaryType, index) {
                 <h2>${pokemon.name}</h2>
                 <p>#${pokemon.id}</p>
             </div>
-            <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+            <img data-id = "card-image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
             <div class= "card-bottom">${getTypeBadges(pokemon.types)}</div>
     `;
 
@@ -21,7 +22,7 @@ function getPokemonDialogTemplate(pokemon) {
     return /*html*/ `
         <h2>${pokemon.name}</h2>
         <p>#${pokemon.id}</p>
-        <img class = dialog-image src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+        <img data-id = "dialog-image" class = dialog-image src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
         <div class="dialog-tabs">
             <button id="aboutTab">About</button>
             <button id="statsTab">Stats</button>
@@ -30,8 +31,8 @@ function getPokemonDialogTemplate(pokemon) {
 
         </div>
         <div class="bottom-dialog">
-            <button id="previous"><img src="./assets/icons/arrow-right.png" alt=""></button>
-            <button id="next"><img src="./assets/icons/arrow-right.png" alt=""></button>
+            <button data-id = "prev-button" id="previous"><img src="./assets/icons/arrow-right.png" alt=""></button>
+            <button data-id = "next-button" id="next"><img src="./assets/icons/arrow-right.png" alt=""></button>
         </div>
     `;
 }

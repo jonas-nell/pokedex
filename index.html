@@ -22,16 +22,16 @@
         <div class="content">
             <img src="./assets/icons/pokemon-logo.png" alt="pokémon-logo">
             <div class="searchbar">
-                <input type="text" id="searchInput" placeholder="Search Pokémon">
-                <button id="searchButton">Search</button>
+                <input data-id="search-input" type="text" id="searchInput" placeholder="Search Pokémon">
+                <button data-id="search-button" id="searchButton">Search</button>
             </div>
         </div>
     </header>
-    <main>
+    <main data-id="content">
         <div class="content">
             <div id="gallery"></div>
-            <p id="noResults" class="d-none">No Pokémon found.</p>
-            <button id="loadMore">Load more Pokémon</button>
+            <p data-id="not-found" id="noResults" class="d-none">No Pokémon found.</p>
+            <button data-id="load-more-button" id="loadMore">Load more Pokémon</button>
         </div>
     </main>
     <footer>
@@ -39,9 +39,9 @@
             <p>made by Jonas Nell</p>
         </div>
     </footer>
-    <dialog id="pokemonDialog">
-        <button id="closeDialog">X</button>
-        <div id="dialogContent"></div>
+    <dialog data-id="dialog" id="pokemonDialog">
+        <button data-id="close-dialog-button" id="closeDialog">X</button>
+        <div data-id="overlay-pokemon-name" id="dialogContent"></div>
     </dialog>
 </body>
 </html>
